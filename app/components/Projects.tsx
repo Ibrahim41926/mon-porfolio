@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import type { Lang } from "../page";
+import { withBasePath } from "../lib/basePath";
 
 type LocalizedText = {
   en: string;
@@ -169,10 +170,10 @@ const projects: Project[] = [
         },
       },
       {
-        src: "/Sreenshoots MuseumStats/Choix des elements ? appliquer dans le rapport.jpg",
+        src: "/Sreenshoots MuseumStats/Choix des elements à appliquer dans le rapport.jpg",
         description: {
           en: "Selecting sections to include in the report.",
-          fr: "Selection des elements a inclure dans le rapport.",
+          fr: "Sélection des éléments à inclure dans le rapport.",
         },
       },
     ],
@@ -198,7 +199,7 @@ const ui = {
     github: "GitHub",
     close: "Fermer",
     clickToZoom: "Cliquez sur une capture pour l'afficher en grand.",
-    generatedPdf: "Document PDF genere",
+    generatedPdf: "Document PDF généré",
     previous: "Precedent",
     next: "Suivant",
   },
@@ -212,12 +213,15 @@ export default function Projects({ lang }: ProjectsProps) {
     () => projects.find((project) => project.title === activeGalleryProjectTitle),
     [activeGalleryProjectTitle]
   );
+  const activeGalleryItems = activeGalleryProject?.gallery ?? [];
 
   const encodeAssetPath = (path: string) =>
     path
       .split("/")
       .map((segment, index) => (index === 0 ? segment : encodeURIComponent(segment)))
       .join("/");
+
+  const toPublicAssetPath = (path: string) => withBasePath(encodeAssetPath(path));
 
   return (
     <section id="projects" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
@@ -230,7 +234,7 @@ export default function Projects({ lang }: ProjectsProps) {
           >
             <div className="relative h-44 w-full border-b border-zinc-800">
               <Image
-                src={encodeAssetPath(project.image)}
+                src={toPublicAssetPath(project.image)}
                 alt={`${project.title} preview`}
                 fill
                 className="object-cover"
@@ -329,7 +333,7 @@ export default function Projects({ lang }: ProjectsProps) {
                 >
                   <div className="relative h-56 w-full bg-zinc-950">
                     <Image
-                      src={encodeAssetPath(item.src)}
+                      src={toPublicAssetPath(item.src)}
                       alt={item.description[lang]}
                       fill
                       className="object-contain p-2 transition duration-200 group-hover:scale-[1.02]"
@@ -345,7 +349,7 @@ export default function Projects({ lang }: ProjectsProps) {
                 <h4 className="mb-3 text-base font-semibold text-white">{ui[lang].generatedPdf}</h4>
                 <div className="h-[65vh] overflow-hidden rounded-xl border border-zinc-800 bg-white">
                   <iframe
-                    src={encodeAssetPath(activeGalleryProject.exportPdf)}
+                    src={toPublicAssetPath(activeGalleryProject.exportPdf)}
                     title={`${activeGalleryProject.title} export PDF`}
                     className="h-full w-full"
                   />
@@ -367,7 +371,7 @@ export default function Projects({ lang }: ProjectsProps) {
           >
             <div className="mb-4 flex items-center justify-between gap-3">
               <p className="text-sm text-zinc-300">
-                {activeGalleryImageIndex + 1}/{activeGalleryProject.gallery.length}
+                {activeGalleryImageIndex + 1}/{activeGalleryItems.length}
               </p>
               <button
                 type="button"
@@ -380,8 +384,8 @@ export default function Projects({ lang }: ProjectsProps) {
 
             <div className="relative h-[70vh] w-full rounded-xl bg-zinc-900">
               <Image
-                src={encodeAssetPath(activeGalleryProject.gallery[activeGalleryImageIndex].src)}
-                alt={activeGalleryProject.gallery[activeGalleryImageIndex].description[lang]}
+                src={toPublicAssetPath(activeGalleryItems[activeGalleryImageIndex].src)}
+                alt={activeGalleryItems[activeGalleryImageIndex].description[lang]}
                 fill
                 className="object-contain p-3"
               />
@@ -394,7 +398,7 @@ export default function Projects({ lang }: ProjectsProps) {
                   setActiveGalleryImageIndex((prev) =>
                     prev === null
                       ? 0
-                      : (prev - 1 + activeGalleryProject.gallery.length) % activeGalleryProject.gallery.length
+                      : (prev - 1 + activeGalleryItems.length) % activeGalleryItems.length
                   )
                 }
                 className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white"
@@ -402,13 +406,13 @@ export default function Projects({ lang }: ProjectsProps) {
                 {ui[lang].previous}
               </button>
               <p className="text-center text-sm text-zinc-200">
-                {activeGalleryProject.gallery[activeGalleryImageIndex].description[lang]}
+                {activeGalleryItems[activeGalleryImageIndex].description[lang]}
               </p>
               <button
                 type="button"
                 onClick={() =>
                   setActiveGalleryImageIndex((prev) =>
-                    prev === null ? 0 : (prev + 1) % activeGalleryProject.gallery.length
+                    prev === null ? 0 : (prev + 1) % activeGalleryItems.length
                   )
                 }
                 className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white"
