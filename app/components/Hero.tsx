@@ -9,8 +9,8 @@ type HeroProps = {
 
 export default function Hero({ lang, name, title, subtitle }: HeroProps) {
   const cta = {
-    en: { portfolio: "Portfolio", projects: "View Projects", contact: "Contact" },
-    fr: { portfolio: "Portfolio", projects: "Voir les projets", contact: "Contact" },
+    en: { portfolio: "Portfolio", projects: "View Projects", contact: "Contact", cv: "Download CV" },
+    fr: { portfolio: "Portfolio", projects: "Voir les projets", contact: "Contact", cv: "Telecharger CV" },
   };
 
   return (
@@ -49,6 +49,13 @@ export default function Hero({ lang, name, title, subtitle }: HeroProps) {
               className="rounded-xl border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white"
             >
               {cta[lang].contact}
+            </a>
+            <a
+              href="/CV_2026-02-23_BALDE_IBRAHIM%20(1).pdf"
+              download
+              className="rounded-xl border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:border-cyan-400 hover:text-cyan-300"
+            >
+              {cta[lang].cv}
             </a>
           </div>
         </div>
