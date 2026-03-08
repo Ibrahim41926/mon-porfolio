@@ -1,27 +1,66 @@
+import type { Lang } from "../page";
+
 type SkillCategory = {
   category: string;
   items: string[];
 };
 
-const skillGroups: SkillCategory[] = [
-  {
-    category: "Languages",
-    items: ["Java", "JavaScript", "Python", "C++"],
-  },
-  {
-    category: "Web",
-    items: ["React", "Node.js", "Spring Boot", "Flask", "HTML", "CSS"],
-  },
-  {
-    category: "Database",
-    items: ["PostgreSQL", "MySQL", "SQLite"],
-  },
-];
+type SkillsProps = {
+  lang: Lang;
+};
 
-export default function Skills() {
+const skillGroupsByLang: Record<Lang, SkillCategory[]> = {
+  en: [
+    {
+      category: "Languages",
+      items: ["Java", "JavaScript", "Python", "C","Scala",],
+    },
+    {
+      category: "Web",
+      items: ["React", "Node.js", "Spring Boot", "Flask", "HTML", "CSS", "Tailwind CSS","PHP", "Symfony","Angular"],
+    },
+    {
+      category: "Database",
+      items: ["PostgreSQL", "MySQL", "SQLite"],
+    },
+     {
+      category: "Others",
+      items: ["Git", "Docker", "Linux", "Agile Methodologies","MCV"],
+    },
+  ],
+  fr: [
+    {
+      category: "Langages",
+      items: ["Java", "JavaScript", "Python", "C","Scala",],
+    },
+    {
+      category: "Web",
+      items: ["React", "Node.js", "Spring Boot", "Flask", "HTML", "CSS", "Tailwind CSS","PHP", "Symfony","Angular"],
+    },
+    {
+      category: "Base de données",
+      items: ["PostgreSQL", "MySQL", "SQLite"],
+    
+    },
+
+    {
+      category: "Autres",
+      items: ["Git", "Docker", "Linux", "Agile Methodologies","MCV"],
+    }
+  ],
+};
+
+const sectionTitle = {
+  en: "Skills",
+  fr: "Competences",
+};
+
+export default function Skills({ lang }: SkillsProps) {
+  const skillGroups = skillGroupsByLang[lang];
+
   return (
     <section id="skills" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
-      <h2 className="text-2xl font-semibold text-white sm:text-3xl">Skills</h2>
+      <h2 className="text-2xl font-semibold text-white sm:text-3xl">{sectionTitle[lang]}</h2>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group) => (
           <article

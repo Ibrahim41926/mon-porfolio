@@ -1,17 +1,32 @@
+import type { Lang } from "../page";
+
+type ContactProps = {
+  lang: Lang;
+};
+
 const contacts = [
   { label: "Email", href: "mailto:ibrahbalde41926@gmail.com", value: "ibrahbalde41926@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/", value: "www.linkedin.com/in/ibrahim-balde-304258383" },
   { label: "GitHub", href: "https://github.com/", value: "github.com/ibrahim41926" },
 ];
 
-export default function Contact() {
+const content = {
+  en: {
+    title: "Contact",
+    subtitle: "Open to internships, apprenticeships, and collaboration on software projects.",
+  },
+  fr: {
+    title: "Contact",
+    subtitle: "Ouvert aux stages, à l'alternance et aux collaborations sur des projets logiciels.",
+  },
+};
+
+export default function Contact({ lang }: ContactProps) {
   return (
     <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
       <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-8 sm:p-10">
-        <h2 className="text-2xl font-semibold text-white sm:text-3xl">Contact</h2>
-        <p className="mt-4 text-zinc-300">
-          Open to internships, Alternance, and collaboration on software projects.
-        </p>
+        <h2 className="text-2xl font-semibold text-white sm:text-3xl">{content[lang].title}</h2>
+        <p className="mt-4 text-zinc-300">{content[lang].subtitle}</p>
         <ul className="mt-6 space-y-3">
           {contacts.map((contact) => (
             <li key={contact.label}>
