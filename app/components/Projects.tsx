@@ -39,6 +39,7 @@ const projects: Project[] = [
       fr: "Contribution au développement d'InnovGuide, une plateforme SaaS de gestion de locations de vacances composée de 4 applications Laravel interconnectées. Déploiement sur VM Ubuntu, configuration Nginx, intégration de composants Filament et migration des fichiers de localisation.",
     },
     tech: ["Laravel", "PHP", "Livewire", "Filament", "MySQL", "Nginx", "Docker", "GitLab"],
+    image: "/Screenshots InnovGuide/innovqube_logo.jpg",
     badge: "Stage",
   },
   {
