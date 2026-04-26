@@ -16,6 +16,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 80px;
+}
+
 body {
   min-height: 100vh;
   background: var(--background);

@@ -14,7 +14,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ibrahim Balde | Full Stack Developer",
-  description: "Developer portfolio built with Next.js, TypeScript and Tailwind CSS.",
+  description: "Étudiant en Licence MIAGE à l'Université de Rennes, passionné par le développement web, les applications Java et l'IA. Disponible pour un stage.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
+  openGraph: {
+    title: "Ibrahim Balde | Full Stack Developer",
+    description: "Étudiant en Licence MIAGE à l'Université de Rennes, passionné par le développement web, les applications Java et l'IA.",
+    type: "website",
+    url: "https://ibrahim41926.github.io/mon-porfolio",
+    images: [{ url: "https://ibrahim41926.github.io/mon-porfolio/ShowroomAi.png", width: 1200, height: 630, alt: "Ibrahim Balde Portfolio" }],
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import type { Lang } from "../page";
 
@@ -42,13 +43,28 @@ const contacts = [
   { label: "Email", href: "mailto:ibrahbalde41926@gmail.com", value: "ibrahbalde41926@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383", value: "www.linkedin.com/in/ibrahim-balde-304258383" },
   { label: "GitHub", href: "https://github.com/ibrahim41926", value: "github.com/ibrahim41926" },
+  { label: "WhatsApp", href: "https://wa.me/33669650414", value: "Envoyer un message" },
 ];
 
 export default function Contact({ lang }: ContactProps) {
   const [state, handleSubmit] = useForm("mjgjzayn");
+  const [toastVisible, setToastVisible] = useState(false);
   const t = content[lang];
 
+  useEffect(() => {
+    if (!state.succeeded) return;
+    const show = setTimeout(() => setToastVisible(true), 0);
+    const hide = setTimeout(() => setToastVisible(false), 5000);
+    return () => { clearTimeout(show); clearTimeout(hide); };
+  }, [state.succeeded]);
+
   return (
+    <>
+    {toastVisible ? (
+      <div className="fixed bottom-6 left-1/2 z-[200] -translate-x-1/2 rounded-xl border border-cyan-400/30 bg-zinc-900 px-6 py-3 text-sm font-medium text-cyan-300 shadow-lg">
+        ✓ {t.success}
+      </div>
+    ) : null}
     <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
       <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-8 sm:p-10">
         <h2 className="text-2xl font-semibold text-white sm:text-3xl">{t.title}</h2>
@@ -145,5 +161,6 @@ export default function Contact({ lang }: ContactProps) {
         </div>
       </div>
     </section>
+    </>
   );
 }

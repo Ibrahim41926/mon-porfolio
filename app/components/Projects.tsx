@@ -217,8 +217,20 @@ const ui = {
 };
 
 export default function Projects({ lang }: ProjectsProps) {
+  const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const [activeGalleryProjectTitle, setActiveGalleryProjectTitle] = useState<string | null>(null);
   const [activeGalleryImageIndex, setActiveGalleryImageIndex] = useState<number | null>(null);
+
+  const allTechs = useMemo(() => {
+    const set = new Set<string>();
+    projects.forEach((p) => p.tech.forEach((t) => set.add(t)));
+    return Array.from(set).sort();
+  }, []);
+
+  const filteredProjects = useMemo(
+    () => (selectedTech ? projects.filter((p) => p.tech.includes(selectedTech)) : projects),
+    [selectedTech]
+  );
 
   const activeGalleryProject = useMemo(
     () => projects.find((project) => project.title === activeGalleryProjectTitle),
@@ -237,8 +249,37 @@ export default function Projects({ lang }: ProjectsProps) {
   return (
     <section id="projects" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
       <h2 className="text-2xl font-semibold text-white sm:text-3xl">{ui[lang].sectionTitle}</h2>
-      <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project) => (
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setSelectedTech(null)}
+          className={`rounded-lg border px-3 py-1 text-xs font-semibold transition ${
+            selectedTech === null
+              ? "border-cyan-400 bg-cyan-400/10 text-cyan-300"
+              : "border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+          }`}
+        >
+          {lang === "en" ? "All" : "Tous"}
+        </button>
+        {allTechs.map((tech) => (
+          <button
+            key={tech}
+            type="button"
+            onClick={() => setSelectedTech(tech)}
+            className={`rounded-lg border px-3 py-1 text-xs font-semibold transition ${
+              selectedTech === tech
+                ? "border-cyan-400 bg-cyan-400/10 text-cyan-300"
+                : "border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+            }`}
+          >
+            {tech}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {filteredProjects.map((project) => (
           <article
             key={project.title}
             className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60"

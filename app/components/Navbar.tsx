@@ -13,13 +13,17 @@ type NavbarProps = {
 const navItems = {
   en: [
     { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Education", href: "#education" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ],
   fr: [
-    { label: "A propos", href: "#about" },
-    { label: "Competences", href: "#skills" },
+    { label: "À propos", href: "#about" },
+    { label: "Expérience", href: "#experience" },
+    { label: "Formation", href: "#education" },
+    { label: "Compétences", href: "#skills" },
     { label: "Projets", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ],
