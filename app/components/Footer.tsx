@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Lang } from "../page";
 
 type FooterProps = {
@@ -5,8 +6,8 @@ type FooterProps = {
 };
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/ibrahim41926" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383" },
+  { label: "GitHub", href: "https://github.com/ibrahim41926", logo: "/github-logo.png" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383", logo: "/linkedin-logo.avif" },
 ];
 
 const rightsText = {
@@ -28,9 +29,10 @@ export default function Footer({ lang }: FooterProps) {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="transition hover:text-cyan-300"
+                className="opacity-70 transition hover:opacity-100"
+                aria-label={social.label}
               >
-                {social.label}
+                <Image src={social.logo} alt={social.label} width={22} height={22} className="h-5 w-5 object-contain" />
               </a>
             </li>
           ))}

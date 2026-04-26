@@ -8,7 +8,7 @@ type LanguageItem = {
 
 const languages: LanguageItem[] = [
   { name: "Peul", level: { en: "Native", fr: "Langue maternelle" }, dots: 5 },
-  { name: "Français", level: { en: "Advanced", fr: "Avancé" }, dots: 4 },
+  { name: "Français", level: { en: "Native / Advanced", fr: "Natif / Avancé" }, dots: 5 },
   { name: "Anglais", level: { en: "B1 – Intermediate", fr: "B1 – Intermédiaire" }, dots: 3 },
 ];
 

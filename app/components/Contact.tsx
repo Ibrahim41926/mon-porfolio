@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useForm, ValidationError } from "@formspree/react";
 import type { Lang } from "../page";
 
@@ -40,10 +41,10 @@ const content = {
 };
 
 const contacts = [
-  { label: "Email", href: "mailto:ibrahbalde41926@gmail.com", value: "ibrahbalde41926@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383", value: "www.linkedin.com/in/ibrahim-balde-304258383" },
-  { label: "GitHub", href: "https://github.com/ibrahim41926", value: "github.com/ibrahim41926" },
-  { label: "WhatsApp", href: "https://wa.me/33669650414", value: "Envoyer un message" },
+  { label: "Email", href: "mailto:ibrahbalde41926@gmail.com", value: "ibrahbalde41926@gmail.com", logo: "/gmail-logo.avif" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383", value: "www.linkedin.com/in/ibrahim-balde-304258383", logo: "/linkedin-logo.avif" },
+  { label: "GitHub", href: "https://github.com/ibrahim41926", value: "github.com/ibrahim41926", logo: "/github-logo.png" },
+  { label: "WhatsApp", href: "https://wa.me/33669650414", value: "Envoyer un message", logo: "/whatsapp-logo.avif" },
 ];
 
 export default function Contact({ lang }: ContactProps) {
@@ -79,7 +80,13 @@ export default function Contact({ lang }: ContactProps) {
                 rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
                 className="group inline-flex items-center gap-3 text-zinc-200 transition hover:text-cyan-300"
               >
-                <span className="w-20 text-sm text-zinc-400">{contact.label}</span>
+                <Image
+                  src={contact.logo}
+                  alt={contact.label}
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 rounded object-contain"
+                />
                 <span className="text-sm sm:text-base">{contact.value}</span>
               </a>
             </li>

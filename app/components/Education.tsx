@@ -21,10 +21,10 @@ const education: EducationItem[] = [
     period: { en: "September 2024 – June 2025", fr: "Septembre 2024 – Juin 2025" },
   },
   {
-    degree: { en: "Computer Science (L1)", fr: "Génie Informatique (L1)" },
+    degree: { en: "Computer Science (L1 – L2)", fr: "Génie Informatique (L1 – L2)" },
     school: "Université Nongo Conakry",
     location: "Conakry, Guinée",
-    period: { en: "October 2023 – July 2024", fr: "Octobre 2023 – Juillet 2024" },
+    period: { en: "2021 – 2023", fr: "2021 – 2023" },
   },
 ];
 
