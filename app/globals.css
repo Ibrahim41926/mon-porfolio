@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+html[data-theme="light"],
+body.theme-light {
+  --background: #f4f4f5;
+  --foreground: #18181b;
+}
+
+html[data-theme="light"] .bg-zinc-950,
+body.theme-light .bg-zinc-950 {
+  background-color: #f4f4f5 !important;
+}
+
+html[data-theme="light"] .bg-zinc-950\/80,
+body.theme-light .bg-zinc-950\/80 {
+  background-color: rgb(244 244 245 / 0.88) !important;
+}
+
+html[data-theme="light"] .bg-zinc-950\/90,
+body.theme-light .bg-zinc-950\/90 {
+  background-color: rgb(244 244 245 / 0.92) !important;
+}
+
+html[data-theme="light"] .bg-zinc-900,
+html[data-theme="light"] .bg-zinc-900\/60,
+body.theme-light .bg-zinc-900,
+body.theme-light .bg-zinc-900\/60 {
+  background-color: #ffffff !important;
+}
+
+html[data-theme="light"] .bg-zinc-900\/80,
+body.theme-light .bg-zinc-900\/80 {
+  background-color: rgb(255 255 255 / 0.9) !important;
+}
+
+html[data-theme="light"] .bg-black\/80,
+html[data-theme="light"] .bg-black\/90,
+body.theme-light .bg-black\/80,
+body.theme-light .bg-black\/90 {
+  background-color: rgb(228 228 231 / 0.9) !important;
+}
+
+html[data-theme="light"] .text-white,
+html[data-theme="light"] .text-zinc-100,
+html[data-theme="light"] .text-zinc-200,
+html[data-theme="light"] .text-zinc-300,
+html[data-theme="light"] .text-zinc-400,
+body.theme-light .text-white,
+body.theme-light .text-zinc-100,
+body.theme-light .text-zinc-200,
+body.theme-light .text-zinc-300,
+body.theme-light .text-zinc-400 {
+  color: #18181b !important;
+}
+
+html[data-theme="light"] .border-zinc-800,
+html[data-theme="light"] .border-zinc-700,
+html[data-theme="light"] .border-white\/10,
+body.theme-light .border-zinc-800,
+body.theme-light .border-zinc-700,
+body.theme-light .border-white\/10 {
+  border-color: #d4d4d8 !important;
+}
+
+html[data-theme="light"] .hover\:text-white:hover,
+body.theme-light .hover\:text-white:hover {
+  color: #09090b !important;
+}
