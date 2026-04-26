@@ -5,8 +5,8 @@ type FooterProps = {
 };
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
+  { label: "GitHub", href: "https://github.com/ibrahim41926" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383" },
 ];
 
 const rightsText = {

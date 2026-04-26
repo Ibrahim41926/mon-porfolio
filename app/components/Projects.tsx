@@ -19,7 +19,8 @@ type Project = {
   title: string;
   description: LocalizedText;
   tech: string[];
-  image: string;
+  image?: string;
+  badge?: string;
   demoUrl?: string;
   githubUrl?: string;
   gallery?: GalleryItem[];
@@ -31,6 +32,15 @@ type ProjectsProps = {
 };
 
 const projects: Project[] = [
+  {
+    title: "InnovGuide - Stage InnovQube",
+    description: {
+      en: "Contribution to the development of InnovGuide, a SaaS vacation rental management platform made of 4 interconnected Laravel applications. VM deployment on Ubuntu, Nginx configuration, Filament components integration and localization files migration.",
+      fr: "Contribution au développement d'InnovGuide, une plateforme SaaS de gestion de locations de vacances composée de 4 applications Laravel interconnectées. Déploiement sur VM Ubuntu, configuration Nginx, intégration de composants Filament et migration des fichiers de localisation.",
+    },
+    tech: ["Laravel", "PHP", "Livewire", "Filament", "MySQL", "Nginx", "Docker", "GitLab"],
+    badge: "Stage",
+  },
   {
     title: "GAI Development",
     description: {
@@ -233,12 +243,25 @@ export default function Projects({ lang }: ProjectsProps) {
             className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60"
           >
             <div className="relative h-44 w-full border-b border-zinc-800">
-              <Image
-                src={toPublicAssetPath(project.image)}
-                alt={`${project.title} preview`}
-                fill
-                className="object-cover"
-              />
+              {project.image ? (
+                <Image
+                  src={toPublicAssetPath(project.image)}
+                  alt={`${project.title} preview`}
+                  fill
+                  className="object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center bg-zinc-900">
+                  <span className="text-4xl font-bold tracking-widest text-cyan-400/40">
+                    {project.title.charAt(0)}
+                  </span>
+                </div>
+              )}
+              {project.badge ? (
+                <span className="absolute top-3 right-3 rounded-full bg-cyan-400 px-2.5 py-0.5 text-xs font-semibold text-zinc-950">
+                  {project.badge}
+                </span>
+              ) : null}
             </div>
 
             <div className="flex flex-1 flex-col p-6">

@@ -6,8 +6,8 @@ type ContactProps = {
 
 const contacts = [
   { label: "Email", href: "mailto:ibrahbalde41926@gmail.com", value: "ibrahbalde41926@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", value: "www.linkedin.com/in/ibrahim-balde-304258383" },
-  { label: "GitHub", href: "https://github.com/", value: "github.com/ibrahim41926" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ibrahim-balde-304258383", value: "www.linkedin.com/in/ibrahim-balde-304258383" },
+  { label: "GitHub", href: "https://github.com/ibrahim41926", value: "github.com/ibrahim41926" },
 ];
 
 const content = {

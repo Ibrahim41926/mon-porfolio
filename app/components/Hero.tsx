@@ -38,7 +38,7 @@ export default function Hero({ lang, name, title, subtitle }: HeroProps) {
               {cta[lang].projects}
             </a>
             <a
-              href="https://github.com/"
+              href="https://github.com/ibrahim41926"
               target="_blank"
               rel="noreferrer"
               className="rounded-xl border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white"
