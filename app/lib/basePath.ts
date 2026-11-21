@@ -18,9 +18,5 @@ export const withBasePath = (path: string) => {
 
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
 
-  if (process.env.NODE_ENV !== "production") {
-    return normalizedPath;
-  }
-
   return `${GITHUB_REPO_BASE_PATH}${normalizedPath}`;
 };

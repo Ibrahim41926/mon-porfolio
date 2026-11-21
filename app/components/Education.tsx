@@ -9,22 +9,28 @@ type EducationItem = {
 
 const education: EducationItem[] = [
   {
-    degree: { en: "MIAGE Bachelor's", fr: "Licence MIAGE" },
-    school: "Université Rennes 1",
+    degree: { en: "Master 1 MIAGE", fr: "Master 1 MIAGE" },
+    school: "ISTIC – Université de Rennes",
     location: "Rennes, France",
-    period: { en: "Since September 2025", fr: "Depuis septembre 2025" },
+    period: { en: "Since September 2026", fr: "Depuis septembre 2026" },
+  },
+  {
+    degree: { en: "MIAGE Bachelor's (L3)", fr: "Licence 3 MIAGE" },
+    school: "ISTIC – Université de Rennes",
+    location: "Rennes, France",
+    period: { en: "2025 – 2026", fr: "2025 – 2026" },
   },
   {
     degree: { en: "Computer Science & Electronics (L2)", fr: "Licence Informatique & Électronique (L2)" },
-    school: "Université Rennes 1",
+    school: "Université de Rennes",
     location: "Rennes, France",
-    period: { en: "September 2024 – June 2025", fr: "Septembre 2024 – Juin 2025" },
+    period: { en: "2024 – 2025", fr: "2024 – 2025" },
   },
   {
-    degree: { en: "Computer Science (L1 – L2)", fr: "Génie Informatique (L1 – L2)" },
+    degree: { en: "Computer Engineering (L1)", fr: "L1 Génie informatique" },
     school: "Université Nongo Conakry",
     location: "Conakry, Guinée",
-    period: { en: "2021 – 2023", fr: "2021 – 2023" },
+    period: { en: "2023 – 2024", fr: "2023 – 2024" },
   },
 ];
 

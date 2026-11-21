@@ -11,13 +11,13 @@ type ExperienceItem = {
 
 const experiences: ExperienceItem[] = [
   {
-    title: { en: "Intern – Laravel Developer", fr: "Stagiaire – Développeur Laravel" },
+    title: { en: "Developer Intern", fr: "Stagiaire développeur" },
     company: "InnovQube",
     location: "Rennes, France",
-    period: { en: "2025 – Present", fr: "2025 – Présent" },
+    period: { en: "April 20 – June 18, 2026", fr: "20 avril – 18 juin 2026" },
     description: {
-      en: "Contribution to InnovGuide, a SaaS vacation rental management platform made of 4 interconnected Laravel applications. VM deployment on Ubuntu, Nginx configuration, Filament components integration and localization files migration.",
-      fr: "Contribution au développement d'InnovGuide, une plateforme SaaS de gestion de locations de vacances composée de 4 applications Laravel interconnectées. Déploiement sur VM Ubuntu, configuration Nginx, intégration de composants Filament et migration des fichiers de localisation.",
+      en: "Feature development on the InnovRental project (PHP / Laravel) within the team, from user stories tracked in OpenProject. Designed the interfaces of the property override screen. Worked through GitLab merge requests with a multi-AI-assisted code review process.",
+      fr: "Développement de fonctionnalités sur le projet InnovRental (PHP / Laravel) au sein de l'équipe, à partir de user stories suivies dans OpenProject. Conception des interfaces de l'écran de surcharge (override) des propriétés. Travail par merge requests GitLab, avec un processus de revue de code assisté par plusieurs IA.",
     },
     badge: "Stage",
   },

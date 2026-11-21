@@ -11,7 +11,7 @@ type ContactProps = {
 const content: Record<Lang, { title: string; subtitle: string; firstName: string; lastName: string; phone: string; email: string; purpose: string; purposePlaceholder: string; send: string; sending: string; success: string; required: string }> = {
   en: {
     title: "Contact",
-    subtitle: "Open to internships, apprenticeships, and collaboration on software projects.",
+    subtitle: "Looking for a 5-month full-stack Java internship starting April 2027. Also open to collaboration on software projects.",
     firstName: "First name",
     lastName: "Last name",
     phone: "Phone",
@@ -25,7 +25,7 @@ const content: Record<Lang, { title: string; subtitle: string; firstName: string
   },
   fr: {
     title: "Contact",
-    subtitle: "Ouvert aux stages, à l'alternance et aux collaborations sur des projets logiciels.",
+    subtitle: "À la recherche d'un stage full-stack Java de 5 mois à partir d'avril 2027. Ouvert aussi aux collaborations sur des projets logiciels.",
     firstName: "Prénom",
     lastName: "Nom",
     phone: "Téléphone",

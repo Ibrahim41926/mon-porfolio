@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ibrahim Balde | Full Stack Developer",
-  description: "Étudiant en Licence MIAGE à l'Université de Rennes, passionné par le développement web, les applications Java et l'IA. Disponible pour un stage.",
+  description: "Développeur full-stack Java · Spring Boot · React. Étudiant en Master 1 MIAGE à l'ISTIC (Université de Rennes), à la recherche d'un stage de 5 mois à partir d'avril 2027.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Ibrahim Balde | Full Stack Developer",
-    description: "Étudiant en Licence MIAGE à l'Université de Rennes, passionné par le développement web, les applications Java et l'IA.",
+    description: "Développeur full-stack Java · Spring Boot · React. Étudiant en Master 1 MIAGE à l'ISTIC (Université de Rennes), à la recherche d'un stage de 5 mois à partir d'avril 2027.",
     type: "website",
     url: "https://ibrahim41926.github.io/mon-porfolio",
     images: [{ url: "https://ibrahim41926.github.io/mon-porfolio/ShowroomAi.png", width: 1200, height: 630, alt: "Ibrahim Balde Portfolio" }],

@@ -13,46 +13,52 @@ const skillGroupsByLang: Record<Lang, SkillCategory[]> = {
   en: [
     {
       category: "Languages",
-      items: ["Java", "JavaScript", "Python", "C","Scala",],
+      items: ["Java", "Kotlin", "TypeScript", "JavaScript", "PHP", "SQL", "Python"],
     },
     {
       category: "Web",
-      items: ["React", "Node.js", "Spring Boot", "Flask", "HTML", "CSS", "Tailwind CSS","PHP", "Symfony","Angular"],
+      items: ["Spring Boot", "REST APIs", "React", "Next.js", "Vite", "Node.js (Fastify)", "Laravel", "Livewire", "Filament", "Symfony", "FastAPI", "Tailwind CSS"],
+    },
+    {
+      category: "Mobile & Desktop",
+      items: ["Android (Kotlin)", "Expo / React Native", "JavaFX", "Swing"],
     },
     {
       category: "Database",
-      items: ["PostgreSQL", "MySQL", "SQLite"],
+      items: ["PostgreSQL", "MySQL / MariaDB", "SQLite", "Supabase", "Prisma"],
     },
-     {
-      category: "Others",
-      items: ["Git", "Docker", "Linux", "Agile Methodologies","MCV"],
+    {
+      category: "Testing, tools & design",
+      items: ["JUnit", "Mockito", "Vitest", "Git", "GitLab", "GitHub Actions", "Docker", "Maven", "Postman", "UML", "Merise", "MVC / MVVM", "Agile / Scrum", "AI-assisted development (Claude Code)"],
     },
   ],
   fr: [
     {
       category: "Langages",
-      items: ["Java", "JavaScript", "Python", "C","Scala",],
+      items: ["Java", "Kotlin", "TypeScript", "JavaScript", "PHP", "SQL", "Python"],
     },
     {
       category: "Web",
-      items: ["React", "Node.js", "Spring Boot", "Flask", "HTML", "CSS", "Tailwind CSS","PHP", "Symfony","Angular"],
+      items: ["Spring Boot", "API REST", "React", "Next.js", "Vite", "Node.js (Fastify)", "Laravel", "Livewire", "Filament", "Symfony", "FastAPI", "Tailwind CSS"],
+    },
+    {
+      category: "Mobile & Desktop",
+      items: ["Android (Kotlin)", "Expo / React Native", "JavaFX", "Swing"],
     },
     {
       category: "Base de données",
-      items: ["PostgreSQL", "MySQL", "SQLite"],
-    
+      items: ["PostgreSQL", "MySQL / MariaDB", "SQLite", "Supabase", "Prisma"],
     },
-
     {
-      category: "Autres",
-      items: ["Git", "Docker", "Linux", "Agile Methodologies","MCV"],
-    }
+      category: "Tests, outils et conception",
+      items: ["JUnit", "Mockito", "Vitest", "Git", "GitLab", "GitHub Actions", "Docker", "Maven", "Postman", "UML", "Merise", "MVC / MVVM", "Agile / Scrum", "Développement assisté par IA (Claude Code)"],
+    },
   ],
 };
 
 const sectionTitle = {
   en: "Skills",
-  fr: "Competences",
+  fr: "Compétences",
 };
 
 export default function Skills({ lang }: SkillsProps) {

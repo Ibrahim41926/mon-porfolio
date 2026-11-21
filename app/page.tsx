@@ -37,11 +37,11 @@ export default function Home() {
   const heroContent = {
     en: {
       title: "Full Stack Developer",
-      subtitle: "Java, React, Python, APIs",
+      subtitle: "Java · Spring Boot · React",
     },
     fr: {
       title: "Developpeur Full Stack",
-      subtitle: "Java, React, Python, APIs",
+      subtitle: "Java · Spring Boot · React",
     },
   };
 

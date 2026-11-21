@@ -52,7 +52,7 @@ export default function Hero({ lang, name, title, subtitle }: HeroProps) {
               {cta[lang].contact}
             </a>
             <a
-              href={withBasePath("/CV_2026-02-23_BALDE_IBRAHIM%20(1).pdf")}
+              href={withBasePath("/CV_Ibrahim_BALDE.pdf")}
               download
               className="rounded-xl border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:border-cyan-400 hover:text-cyan-300"
             >
